@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -15,6 +16,13 @@ public class Main {
         OptionalDouble optionalAverage = getAverage(integers);
         System.out.println("Exercise 3");
         optionalAverage.ifPresent(System.out::println);
+
+        List<String> strings = Arrays.asList("aaa", "bbb", "xXx", "a-a");
+        List<String> upperCase = toUpper(strings);
+        System.out.println("Exercise 4");
+        upperCase
+                .stream()
+                .forEach(System.out::println);
     }
 
     // Exercise 1
@@ -59,4 +67,10 @@ public class Main {
                 .average();
     }
 
+    private static List<String> toUpper(List<String> strings) {
+        return strings
+                .stream()
+                .map(x -> x.toUpperCase())
+                .collect(Collectors.toList());
+    }
 }
