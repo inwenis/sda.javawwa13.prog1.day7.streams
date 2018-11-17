@@ -46,6 +46,19 @@ public class Main {
         System.out.println("Exercise 10 - sum numbers greater than 10");
         int sum = sumGreaterThan10(integers);
         System.out.println(sum);
+
+        List<String> names = Arrays.asList("ola", "ala", "Ola", "Filip"
+        ,"filip");
+        List<String> distinctUpperCaseNames = distinctUpperCase(names);
+        System.out.println("Exercise 11 - upper case unique names");
+        distinctUpperCaseNames.forEach(System.out::println);
+
+        System.out.println("Exercise 11 - upper case unique names with limit");
+        names = Arrays.asList("ola", "ala", "Ola", "Filip"
+                ,"filip", "kasia", "basia", "olek", "maja", "agata",
+                "kai", "stefan", "zbyszek");
+        distinctUpperCaseNames = distinctUpperCaseLimit(names);
+        distinctUpperCaseNames.forEach(System.out::println);
     }
 
     // Exercise 1
@@ -159,5 +172,23 @@ public class Main {
                 .filter(x -> x > 10)
                 .mapToInt(Integer::intValue)
                 .sum();
+    }
+
+    // Exercise 11
+    private static List<String> distinctUpperCase(List<String> names) {
+        return names
+                .stream()
+                .map(x -> x.toUpperCase())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    private static List<String> distinctUpperCaseLimit(List<String> names) {
+        return names
+                .stream()
+                .map(x -> x.toUpperCase())
+                .distinct()
+                .limit(10)
+                .collect(Collectors.toList());
     }
 }
