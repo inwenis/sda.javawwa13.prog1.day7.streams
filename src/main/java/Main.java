@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -15,6 +12,9 @@ public class Main {
         System.out.println("Exercise 2");
         maxInteger.ifPresent(System.out::println);
 
+        OptionalDouble optionalAverage = getAverage(integers);
+        System.out.println("Exercise 3");
+        optionalAverage.ifPresent(System.out::println);
     }
 
     // Exercise 1
@@ -50,6 +50,13 @@ public class Main {
         return integers
                 .stream()
                 .max((a, b) -> a.compareTo(b));
+    }
+
+    private static OptionalDouble getAverage(List<Integer> integers) {
+        return integers
+                .stream()
+                .mapToInt(Integer::intValue)
+                .average();
     }
 
 }
