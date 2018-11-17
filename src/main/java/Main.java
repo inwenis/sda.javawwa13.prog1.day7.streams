@@ -38,6 +38,10 @@ public class Main {
 
         System.out.println("Exercise 8 - reverse string");
         System.out.println(reverse("aaaXXX"));
+
+        System.out.println("Exercise 9 - dividable by 3");
+        List<Integer> dividableBy = dividableBy3(Arrays.asList(1,2,3,100,111));
+        dividableBy.forEach(System.out::println);
     }
 
     // Exercise 1
@@ -135,5 +139,12 @@ public class Main {
         sb.reverse();
         return sb.toString();
     }
-    
+
+    // Exercise 9
+    private static List<Integer> dividableBy3(List<Integer> ints) {
+        return ints
+                .stream()
+                .filter(x -> x % 3 == 0)
+                .collect(Collectors.toList());
+    }
 }
