@@ -20,9 +20,7 @@ public class Main {
         List<String> strings = Arrays.asList("aaa", "bbb", "xXx", "a-a");
         List<String> upperCase = toUpper(strings);
         System.out.println("Exercise 4");
-        upperCase
-                .stream()
-                .forEach(System.out::println);
+        upperCase.forEach(System.out::println);
     }
 
     // Exercise 1
