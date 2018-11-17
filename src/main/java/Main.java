@@ -42,6 +42,10 @@ public class Main {
         System.out.println("Exercise 9 - dividable by 3");
         List<Integer> dividableBy = dividableBy3(Arrays.asList(1,2,3,100,111));
         dividableBy.forEach(System.out::println);
+
+        System.out.println("Exercise 10 - sum numbers greater than 10");
+        int sum = sumGreaterThan10(integers);
+        System.out.println(sum);
     }
 
     // Exercise 1
@@ -146,5 +150,14 @@ public class Main {
                 .stream()
                 .filter(x -> x % 3 == 0)
                 .collect(Collectors.toList());
+    }
+
+    // Exercise 10
+    private static int sumGreaterThan10(List<Integer> integers) {
+        return integers
+                .stream()
+                .filter(x -> x > 10)
+                .mapToInt(Integer::intValue)
+                .sum();
     }
 }
