@@ -11,6 +11,6 @@
         [1,2,10] -> "o1,e2,e10"
 8. napisz funkcję która zwróci wyraz podany na wejściu od tyłu.
 9. napisz funkcję która z listy intów wybierze tyle te które są podzielne przez 3.
-10 napisz funkcję która z podanych liczb na wejściu zsumuje te które są większe od 10.
+10. napisz funkcję która z podanych liczb na wejściu zsumuje te które są większe od 10.
 11. Napisz funkcję która dostanie listę imion, każde imie zapisze wielkimi literami i zwróci tylko unikalne imiona.
     Dodatkowo funkcja ma zwracać maksymalnie 10 imion
