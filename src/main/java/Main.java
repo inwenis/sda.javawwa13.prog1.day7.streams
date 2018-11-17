@@ -31,6 +31,10 @@ public class Main {
         String concat = concat(integers);
         System.out.println("Exercise 6 - concat ints");
         System.out.println(concat);
+
+        concat = concat2(integers);
+        System.out.println("Exercise 7 - concat ints with odd/even check");
+        System.out.println(concat);
     }
 
     // Exercise 1
@@ -89,6 +93,36 @@ public class Main {
         return integers
                 .stream()
                 .map(Object::toString)
+                .collect(Collectors.joining(",", "[", "]"));
+    }
+
+    // Exercise 7
+    private static String concat2(List<Integer> integers) {
+        return integers
+                .stream()
+                .map(x -> (x % 2 == 0 ? "e" : "o") + x.toString())
+                .collect(Collectors.joining(",", "[", "]"));
+    }
+
+    // Exercise 7 v2
+    private static String concat2_2(List<Integer> integers) {
+        return integers
+                .stream()
+                .map(x -> x % 2 == 0 ? "e" + x.toString() : "o" + x.toString())
+                .collect(Collectors.joining(",", "[", "]"));
+    }
+
+    // Exercise 7 v3
+    private static String concat2_3(List<Integer> integers) {
+        return integers
+                .stream()
+                .map(x -> {
+                    if (x % 2 == 0) {
+                        return "e" + x.toString();
+                    } else {
+                        return "o" + x.toString();
+                    }
+                })
                 .collect(Collectors.joining(",", "[", "]"));
     }
 }
