@@ -58,6 +58,7 @@ public class Main {
                 .max((a, b) -> a.compareTo(b));
     }
 
+    // Exercise 3
     private static OptionalDouble getAverage(List<Integer> integers) {
         return integers
                 .stream()
@@ -65,6 +66,7 @@ public class Main {
                 .average();
     }
 
+    // Exercise 4
     private static List<String> toUpper(List<String> strings) {
         return strings
                 .stream()
