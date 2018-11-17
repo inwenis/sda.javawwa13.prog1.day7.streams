@@ -35,6 +35,9 @@ public class Main {
         concat = concat2(integers);
         System.out.println("Exercise 7 - concat ints with odd/even check");
         System.out.println(concat);
+
+        System.out.println("Exercise 8 - reverse string");
+        System.out.println(reverse("aaaXXX"));
     }
 
     // Exercise 1
@@ -125,4 +128,12 @@ public class Main {
                 })
                 .collect(Collectors.joining(",", "[", "]"));
     }
+
+    // Exercise 8
+    private static String reverse(String input) {
+        StringBuilder sb = new StringBuilder(input);
+        sb.reverse();
+        return sb.toString();
+    }
+    
 }
