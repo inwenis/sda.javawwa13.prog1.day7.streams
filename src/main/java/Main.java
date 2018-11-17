@@ -17,10 +17,16 @@ public class Main {
         System.out.println("Exercise 3");
         optionalAverage.ifPresent(System.out::println);
 
-        List<String> strings = Arrays.asList("aaa", "bbb", "xXx", "a-a");
+        List<String> strings = Arrays.asList("aaa", "bbb", "xXx", "a-a", "aaaa");
         List<String> upperCase = toUpper(strings);
         System.out.println("Exercise 4");
         upperCase.forEach(System.out::println);
+
+        System.out.println("Exercise 5");
+        strings
+                .stream()
+                .filter(x -> x.startsWith("a") && x.length() == 3)
+                .forEach(System.out::println);
     }
 
     // Exercise 1
