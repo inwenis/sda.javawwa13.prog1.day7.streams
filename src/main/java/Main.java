@@ -27,6 +27,10 @@ public class Main {
                 .stream()
                 .filter(x -> x.startsWith("a") && x.length() == 3)
                 .forEach(System.out::println);
+
+        String concat = concat(integers);
+        System.out.println("Exercise 6 - concat ints");
+        System.out.println(concat);
     }
 
     // Exercise 1
@@ -78,5 +82,13 @@ public class Main {
                 .stream()
                 .map(x -> x.toUpperCase())
                 .collect(Collectors.toList());
+    }
+
+    // Exercise 6
+    private static String concat(List<Integer> integers) {
+        return integers
+                .stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(",", "[", "]"));
     }
 }
