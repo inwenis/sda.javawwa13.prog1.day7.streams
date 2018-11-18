@@ -70,6 +70,16 @@ public class Main {
                 .sorted(Comparator.comparingDouble((CarModel x) -> -x.cityFuelEfficiency).thenComparing(x -> x.carline))
                 .limit(20)
                 .forEach(Main::printCarModel);
+
+        // Exercise 5
+        System.out.println("\nExercise 5 - 10 most fuel efficient cars from Mercedes-Benz");
+        printHeadersEurope();
+        carModelsEurope
+                .stream()
+                .filter(x -> x.division.equals("Mercedes-Benz"))
+                .sorted(Comparator.comparingDouble(x -> x.cityFuelConsumption))
+                .limit(10)
+                .forEach(Main::printCarModel);
     }
 
     private static void printHeaders() {
