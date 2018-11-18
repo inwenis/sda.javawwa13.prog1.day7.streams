@@ -36,6 +36,7 @@ public class Main {
                 })
                 .collect(Collectors.toList());
 
+        printHeaders();
         carModels
                 .stream()
                 .limit(10)
@@ -43,8 +44,22 @@ public class Main {
 
     }
 
+    private static void printHeaders() {
+        String line = String.format("|%10s|%30s|%20s|%10s|%10s|%10s|%10s|%10s|",
+                "Model Year",
+                "Division",
+                "Carline",
+                "Eng Displ",
+                "# Cyl",
+                "City FE",
+                "Hwy FE",
+                "Comb FE");
+        System.out.println(line);
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------");
+    }
+
     private static void printCarModel(CarModel x) {
-        String line = String.format("%d %s %s %s %d %d %d %d",
+        String line = String.format("|%10d|%30s|%20s|%10s|%10d|%10d|%10d|%10d|",
                 x.year,
                 x.division,
                 x.carline,
