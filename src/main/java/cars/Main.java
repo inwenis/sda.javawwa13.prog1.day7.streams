@@ -38,7 +38,7 @@ public class Main {
                 .collect(Collectors.toList());
 
         // Exercise 2
-        System.out.println("10 most fuel efficient cars (by city fuel efficiency)");
+        System.out.println("\nExercise 2 - 10 most fuel efficient cars (by city fuel efficiency)");
         printHeaders();
         carModels
                 .stream()
@@ -47,6 +47,8 @@ public class Main {
                 .limit(10)
                 .forEach(Main::printCarModel);
 
+        // Exercise 3
+        System.out.println("\nExercise 3 - 10 most fuel efficient cars (by l/100km)");
         List<CarModelEurope> carModelsEurope = carModels
                 .stream()
                 .map(CarModel::toEuropeanFuelConsumption)
