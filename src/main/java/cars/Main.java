@@ -46,6 +46,18 @@ public class Main {
 //                .sorted((a, b) -> b.cityFuelEfficiency - a.cityFuelEfficiency) // another way of comparing
                 .limit(10)
                 .forEach(Main::printCarModel);
+
+        List<CarModelEurope> carModelsEurope = carModels
+                .stream()
+                .map(CarModel::toEuropeanFuelConsumption)
+                .collect(Collectors.toList());
+
+        printHeadersEurope();
+        carModelsEurope
+                .stream()
+                .sorted(Comparator.comparingDouble(x -> x.combinedFuelConsumption))
+                .limit(10)
+                .forEach(Main::printCarModel);
     }
 
     private static void printHeaders() {
@@ -62,16 +74,44 @@ public class Main {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------");
     }
 
-    private static void printCarModel(CarModel x) {
+    private static void printHeadersEurope() {
+        String line = String.format("|%10s|%30s|%20s|%10s|%10s|%10s|%10s|%10s|(l/100Km)",
+                "Model Year",
+                "Division",
+                "Carline",
+                "Eng Displ",
+                "# Cyl",
+                "City FC",
+                "Hwy FC",
+                "Comb FC");
+        System.out.println(line);
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------");
+
+    }
+
+    private static void printCarModel(CarModel carModel) {
         String line = String.format("|%10d|%30s|%20s|%10s|%10d|%10d|%10d|%10d|",
-                x.year,
-                x.division,
-                x.carline,
-                x.engineDisplay,
-                x.numberOfCylinders,
-                x.cityFuelEfficiency,
-                x.highwayFuelEfficiency,
-                x.combinedFuelEfficiency);
+                carModel.year,
+                carModel.division,
+                carModel.carline,
+                carModel.engineDisplay,
+                carModel.numberOfCylinders,
+                carModel.cityFuelEfficiency,
+                carModel.highwayFuelEfficiency,
+                carModel.combinedFuelEfficiency);
+        System.out.println(line);
+    }
+
+    private static void printCarModel(CarModelEurope carModelEurope) {
+        String line = String.format("|%10d|%30s|%20s|%10s|%10d|%10f|%10f|%10f|",
+                carModelEurope.year,
+                carModelEurope.division,
+                carModelEurope.carline,
+                carModelEurope.engineDisplay,
+                carModelEurope.numberOfCylinders,
+                carModelEurope.cityFuelConsumption,
+                carModelEurope.highwayFuelConsumption,
+                carModelEurope.combinedFuelConsumption);
         System.out.println(line);
     }
 }
