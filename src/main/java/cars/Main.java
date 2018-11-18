@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,12 +37,15 @@ public class Main {
                 })
                 .collect(Collectors.toList());
 
+        // Exercise 2
+        System.out.println("10 most fuel efficient cars (by city fuel efficiency)");
         printHeaders();
         carModels
                 .stream()
+                .sorted(Comparator.comparingInt(x -> -x.cityFuelEfficiency))
+//                .sorted((a, b) -> b.cityFuelEfficiency - a.cityFuelEfficiency) // another way of comparing
                 .limit(10)
                 .forEach(Main::printCarModel);
-
     }
 
     private static void printHeaders() {
