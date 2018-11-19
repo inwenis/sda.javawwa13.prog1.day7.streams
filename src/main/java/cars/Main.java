@@ -173,6 +173,23 @@ public class Main {
                 .map(x -> String.format("%s (%d)", x, groupedByDivision2.get(x).size()))
                 .forEach(System.out::println);
 
+        // Exercise 12
+        System.out.println("\nExercise 12 - car makers with at least 20 models");
+        groupedByDivision2
+                .keySet()
+                .stream()
+                .filter(x -> groupedByDivision2.get(x).size() > 20)
+                .map(x -> String.format("%s (%d)", x, groupedByDivision2.get(x).size()))
+                .forEach(System.out::println);
+
+        System.out.println("\nExercise 12 - car makers with at least 50 models");
+        groupedByDivision2
+                .keySet()
+                .stream()
+                .filter(x -> groupedByDivision2.get(x).size() > 50)
+                .map(x -> String.format("%s (%d)", x, groupedByDivision2.get(x).size()))
+                .forEach(System.out::println);
+
     }
 
     private static void printHeaders() {
