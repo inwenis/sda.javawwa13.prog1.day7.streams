@@ -111,6 +111,13 @@ public class Main {
         } else {
             System.out.println("There is no McLaren with city fuel consumption less then 14 l/100Km");
         }
+
+        // Exercise 8
+        System.out.println("\nExercise 8 - check if all cars are made by Porsche");
+        boolean areAllByPorsche = carModelsEurope
+                .stream()
+                .allMatch(x -> x.division.equals("Porsche"));
+        System.out.println("Are all cars made by Porsche: " + areAllByPorsche);
     }
 
     private static void printHeaders() {
