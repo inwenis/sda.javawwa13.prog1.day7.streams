@@ -82,7 +82,7 @@ public class Main {
                 .forEach(Main::printCarModel);
 
         // Exercise 6
-        System.out.println("\nExercise 6 - if present find a BMW with consumption less than 7 l/100Km");
+        System.out.println("\nExercise 6 - if present find a BMW with city consumption less than 7 l/100Km");
         Optional<CarModelEurope> optionalBmw = carModelsEurope
                 .stream()
                 .filter(x -> x.division.equals("BMW"))
@@ -95,6 +95,21 @@ public class Main {
             printCarModel(optionalBmw.get());
         } else {
             System.out.println("There is no BMW with fuel consumption less then 7 l/100Km");
+        }
+
+        // Exercise 7
+        System.out.println("\nExercise 7 - if present find a McLaren with city consumption less than 14 l/100Km");
+        Optional<CarModelEurope> optionalMcLaren = carModelsEurope
+                .stream()
+                .filter(x -> x.division.equals("McLaren"))
+                .filter(x -> x.cityFuelConsumption < 14)
+                .findFirst();
+        if (optionalMcLaren.isPresent()) {
+            System.out.println("We have found a McLaren Model with city fuel consumption less than 14 l/100Km");
+            printHeadersEurope();
+            printCarModel(optionalMcLaren.get());
+        } else {
+            System.out.println("There is no McLaren with city fuel consumption less then 14 l/100Km");
         }
     }
 

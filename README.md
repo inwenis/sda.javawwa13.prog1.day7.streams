@@ -33,15 +33,17 @@
     tip: filtrowanie
 6. jeżeli istnieje wybierz taki model BMW który ma spalanie miejskie mniejsze niż 7 l/100Km
     tip: filtrowanie + findFirst
-7. sprawdź czy wszystkie modele są wyprodukowane przez Porshe
+7. jeżeli istnieje wybierz taki model McLaren który ma spalanie miejskie mniejsze niż 14 l/100Km
+    tip: filtrowanie + findFirst
+8. sprawdź czy wszystkie modele są wyprodukowane przez Porshe
     tip: wszystkie -> ang. all, w stream() jest metoda All()
-8. sprawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
+9. sprawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
     tip: tak jak poprzednio przyda nam się angielskie słowo -> tym razem "any"
-9. pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje
+10. pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje
     tip: collect + grouping
-10. używając grup z poprzedniego punktu wypisz liczebność każdej grupy
+11. używając grup z poprzedniego punktu wypisz liczebność każdej grupy
     tip: projekcja
-11. wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
+12. wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
     tip: wszyskiego składowe już znasz ;)
-12. dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
+13. dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
     tip: flatMap
