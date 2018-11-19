@@ -203,7 +203,7 @@ public class Main {
     }
 
     private static void printHeaders() {
-        String line = String.format("|%10s|%30s|%20s|%10s|%10s|%10s|%10s|%10s|",
+        String line = String.format("|%10s|%30s|%30s|%10s|%10s|%10s|%10s|%10s|",
                 "Model Year",
                 "Division",
                 "Carline",
@@ -213,11 +213,11 @@ public class Main {
                 "Hwy FE",
                 "Comb FE");
         System.out.println(line);
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------");
     }
 
     private static void printHeadersEurope() {
-        String line = String.format("|%10s|%30s|%25s|%10s|%10s|%10s|%10s|%10s|(l/100Km)",
+        String line = String.format("|%10s|%30s|%30s|%10s|%10s|%10s|%10s|%10s|(l/100Km)",
                 "Model Year",
                 "Division",
                 "Carline",
@@ -227,12 +227,12 @@ public class Main {
                 "Hwy FC",
                 "Comb FC");
         System.out.println(line);
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------");
 
     }
 
     private static void printCarModel(CarModel carModel) {
-        String line = String.format("|%10d|%30s|%25s|%10s|%10d|%10d|%10d|%10d|",
+        String line = String.format("|%10d|%30s|%30s|%10s|%10d|%10d|%10d|%10d|",
                 carModel.year,
                 carModel.division,
                 carModel.carline,
@@ -245,7 +245,7 @@ public class Main {
     }
 
     private static void printCarModel(CarModelEurope carModelEurope) {
-        String line = String.format("|%10d|%30s|%25s|%10s|%10d|%10f|%10f|%10f|",
+        String line = String.format("|%10d|%30s|%30s|%10s|%10d|%10f|%10f|%10f|",
                 carModelEurope.year,
                 carModelEurope.division,
                 carModelEurope.carline,
