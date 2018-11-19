@@ -161,6 +161,17 @@ public class Main {
                 .collect(Collectors.groupingBy(x -> x.division));
         System.out.println("Another way of counting car makers: " + groupedByDivision.keySet().size());
 
+        // Exercise 11
+        System.out.println("\nExercise 11 - count models made by each car maker");
+        Map<String, List<CarModelEurope>> groupedByDivision2 = carModelsEurope
+                .stream()
+                .collect(Collectors.groupingBy(x -> x.division));
+
+        groupedByDivision2
+                .keySet()
+                .stream()
+                .map(x -> String.format("%s (%d)", x, groupedByDivision2.get(x).size()))
+                .forEach(System.out::println);
 
     }
 
