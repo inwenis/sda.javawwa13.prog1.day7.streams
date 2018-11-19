@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -135,6 +136,32 @@ public class Main {
                 .stream()
                 .anyMatch(x -> x.division.compareToIgnoreCase("Olds Mobile") == 0);
         System.out.println("Is there any car made by Olds Mobile (ignoring case): " + (anyOldsMobile ? "yes" : "no"));
+
+        // Exercise 10
+        System.out.println("\nExercise 10 - count all distinct car companies");
+        List<String> carCompanies = carModelsEurope
+                .stream()
+                .map(x -> x.division)
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println("There are " + carCompanies.size() + " distinct car companies");
+        Map<Character, List<String>> groupedByFirstCharacter = carCompanies
+                .stream()
+                .collect(Collectors.groupingBy(x -> Character.toLowerCase(x.charAt(0))));
+        for (Character key : groupedByFirstCharacter.keySet()) {
+            String collect = groupedByFirstCharacter.get(key)
+                    .stream()
+                    .collect(Collectors.joining(", ", "" + key + ": ", ""));
+            System.out.println(collect);
+        }
+
+        // another way of counting car makers
+        Map<String, List<CarModelEurope>> groupedByDivision = carModelsEurope
+                .stream()
+                .collect(Collectors.groupingBy(x -> x.division));
+        System.out.println("Another way of counting car makers: " + groupedByDivision.keySet().size());
+
+
     }
 
     private static void printHeaders() {

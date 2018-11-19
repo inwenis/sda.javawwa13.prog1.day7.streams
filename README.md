@@ -39,8 +39,18 @@
     tip: wszystkie -> ang. all, w stream() jest metoda All()
 9. sprawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
     tip: tak jak poprzednio przyda nam się angielskie słowo -> tym razem "any"
-10. pogrupuj modele po producencie i wypisz ilu różnych producentów istnieje
-    tip: collect + grouping
+10. ilu różnych producentów samochodów istnieje?
+    wypisz producentów zgrupowanych po pierwszej literze.
+    tip: distinct
+
+    przykład:
+```
+    a: ALFA ROMEO, Aston Martin Lagonda Ltd, Audi, Acura
+    b: BMW, Bentley, Buick
+    c: Chevrolet, Cadillac, Chrysler, CHEVROLET
+    ...
+```
+
 11. używając grup z poprzedniego punktu wypisz liczebność każdej grupy
     tip: projekcja
 12. wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
