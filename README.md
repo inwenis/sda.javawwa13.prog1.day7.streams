@@ -47,3 +47,8 @@
     tip: wszyskiego składowe już znasz ;)
 13. dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
     tip: flatMap
+
+# TODO
+
+1. Znajdź więcej danych o modelach samochodów wprowadzanych w różnych latach
+2. Sprawdź jak zmieniało się średnie spalanie modeli wprowadzanych w różnych latach
