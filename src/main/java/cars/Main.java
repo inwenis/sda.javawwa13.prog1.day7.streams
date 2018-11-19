@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -80,6 +80,22 @@ public class Main {
                 .sorted(Comparator.comparingDouble(x -> x.cityFuelConsumption))
                 .limit(10)
                 .forEach(Main::printCarModel);
+
+        // Exercise 6
+        System.out.println("\nExercise 6 - if present find a BMW with consumption less than 7 l/100Km");
+        Optional<CarModelEurope> optionalBmw = carModelsEurope
+                .stream()
+                .filter(x -> x.division.equals("BMW"))
+                .filter(x -> x.combinedFuelConsumption < 7)
+                .findFirst();
+
+        if (optionalBmw.isPresent()) {
+            System.out.println("We have found a BMW Model with fuel consumption less than 7 l/100Km");
+            printHeadersEurope();
+            printCarModel(optionalBmw.get());
+        } else {
+            System.out.println("There is no BMW with fuel consumption less then 7 l/100Km");
+        }
     }
 
     private static void printHeaders() {
@@ -97,7 +113,7 @@ public class Main {
     }
 
     private static void printHeadersEurope() {
-        String line = String.format("|%10s|%30s|%20s|%10s|%10s|%10s|%10s|%10s|(l/100Km)",
+        String line = String.format("|%10s|%30s|%25s|%10s|%10s|%10s|%10s|%10s|(l/100Km)",
                 "Model Year",
                 "Division",
                 "Carline",
@@ -112,7 +128,7 @@ public class Main {
     }
 
     private static void printCarModel(CarModel carModel) {
-        String line = String.format("|%10d|%30s|%20s|%10s|%10d|%10d|%10d|%10d|",
+        String line = String.format("|%10d|%30s|%25s|%10s|%10d|%10d|%10d|%10d|",
                 carModel.year,
                 carModel.division,
                 carModel.carline,
@@ -125,7 +141,7 @@ public class Main {
     }
 
     private static void printCarModel(CarModelEurope carModelEurope) {
-        String line = String.format("|%10d|%30s|%20s|%10s|%10d|%10f|%10f|%10f|",
+        String line = String.format("|%10d|%30s|%25s|%10s|%10d|%10f|%10f|%10f|",
                 carModelEurope.year,
                 carModelEurope.division,
                 carModelEurope.carline,

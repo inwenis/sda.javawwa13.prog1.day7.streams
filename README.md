@@ -31,8 +31,8 @@
     jeżeli 2 modele mają takie samo spalanie pierwszy powinien być ten który jest pierwszy alfabetycznie
 5. 10 modeli o najmniejszym spalaniu dla wybranego przez Ciebie producenta
     tip: filtrowanie
-6. jeżeli istnieje wybierz taki model BMW który ma spalanie mniejsze niż 20
-    tip: filtrowanie + sortowanie
+6. jeżeli istnieje wybierz taki model BMW który ma spalanie miejskie mniejsze niż 7 l/100Km
+    tip: filtrowanie + findFirst
 7. sprawdź czy wszystkie modele są wyprodukowane przez Porshe
     tip: wszystkie -> ang. all, w stream() jest metoda All()
 8. sprawdzy czy istnieje jaki kolwiek model wyprodukowany przez "Fiat", to samo dla "Olds Mobile"
