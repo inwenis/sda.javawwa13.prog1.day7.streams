@@ -118,6 +118,23 @@ public class Main {
                 .stream()
                 .allMatch(x -> x.division.equals("Porsche"));
         System.out.println("Are all cars made by Porsche: " + areAllByPorsche);
+
+        // Exercise 9
+        System.out.println("\nExercise 9 - check if there is any car made by Fiat");
+        boolean anyFiat = carModelsEurope
+                .stream()
+                .anyMatch(x -> x.division.equals("Fiat"));
+        System.out.println("Is there any car made by Fiat: " + (anyFiat ? "yes" : "no"));
+
+        boolean anyFiat2 = carModelsEurope
+                .stream()
+                .anyMatch(x -> x.division.compareToIgnoreCase("Fiat") == 0);
+        System.out.println("Is there any car made by Fiat (ignoring case): " + (anyFiat2 ? "yes" : "no"));
+
+        boolean anyOldsMobile = carModelsEurope
+                .stream()
+                .anyMatch(x -> x.division.compareToIgnoreCase("Olds Mobile") == 0);
+        System.out.println("Is there any car made by Olds Mobile (ignoring case): " + (anyOldsMobile ? "yes" : "no"));
     }
 
     private static void printHeaders() {
