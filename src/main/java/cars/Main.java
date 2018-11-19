@@ -190,6 +190,16 @@ public class Main {
                 .map(x -> String.format("%s (%d)", x, groupedByDivision2.get(x).size()))
                 .forEach(System.out::println);
 
+        // Exercise 13
+        System.out.println("\nExercise 13 - all models from car makers which have at least 50 models");
+        printHeadersEurope();
+        groupedByDivision2
+                .values()
+                .stream()
+                .filter(x -> x.size() > 50)
+                .flatMap(x -> x.stream())
+                .forEach(Main::printCarModel);
+
     }
 
     private static void printHeaders() {

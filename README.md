@@ -55,7 +55,7 @@
     tip: projekcja
 12. wypisz producentów dla których istnieje conajmniej 50 modeli/ 20 modeli
     tip: wszyskiego składowe już znasz ;)
-13. dla producentów dla których istnieje conajmniej 20 modeli wypisz wszystkie modele
+13. dla producentów dla których istnieje conajmniej 50 modeli wypisz wszystkie modele
     tip: flatMap
 
 # TODO
